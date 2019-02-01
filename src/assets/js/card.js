@@ -10,7 +10,7 @@ class Card {
 
   score() {
     if (parseInt(this.rank) <= 10) {
-      this.value = this.rank;
+      this.value = parseInt(this.rank);
     }
     else if (this.rank === "jack", "queen", "king") {
       this.value = 10;
@@ -21,7 +21,7 @@ class Card {
   } 
 
   update() {
-    document.querySelector(".player-hand .score").textContent = score();
+    //document.querySelector(".player-hand .score").textContent = ;
   }
 
   render () {
@@ -32,7 +32,6 @@ class Card {
   //  this.element = document.createElement("div");
   //  this.element.className = `card face-${this.rank}-of-${this.suit}`;
     this.score();
-    console.log(this.score());
     return this.element;
   }
 

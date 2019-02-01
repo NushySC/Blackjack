@@ -87,8 +87,8 @@ class Deck {
 
   showCardsPlayer() {
     let cardOnTable = this.cards.pop();
-    let cardsPlayer = document.querySelector("#player-hand .cards");
-    cardOnTable.mount(cardsPlayer);
+    let cardPlayer = document.querySelector("#player-hand .cards");
+    cardOnTable.mount(cardPlayer);
     return cardOnTable;
   }
 }
