@@ -12,12 +12,17 @@ class Card {
     if (parseInt(this.rank) <= 10) {
       this.value = this.rank;
     }
-    else {
+    else if (this.rank === "jack", "queen", "king") {
+      this.value = 10;
+    } else if (this.rank === "ace") {
       this.value = 11;
     }    
     return this.value;
-    console.log(this.value);
   } 
+
+  update() {
+    document.querySelector(".player-hand .score").textContent = score();
+  }
 
   render () {
     this.element = document.createElement("div");
@@ -26,9 +31,9 @@ class Card {
   //  this.element.className = `card face-revers`;
   //  this.element = document.createElement("div");
   //  this.element.className = `card face-${this.rank}-of-${this.suit}`;
-  this.score();
-  console.log(this.score());
-  return this.element;
+    this.score();
+    console.log(this.score());
+    return this.element;
   }
 
   mount (parent) {
