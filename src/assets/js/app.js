@@ -4,4 +4,5 @@ document.addEventListener('DOMContentLoaded', () => {
   deck.shuffle();
   deck.showCardsDealer();
   deck.showCardsPlayer();
+  deck.showCardsPlayer();
 });

@@ -91,5 +91,4 @@ class Deck {
     cardOnTable.mount(cardsPlayer);
     return cardOnTable;
   }
-
 }
