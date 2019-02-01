@@ -16,7 +16,7 @@ function assetsClean(done) {
         { force: true }
     );
 }
- 
+
 // Copy all assets from src/assets into public
 function assetsPublish(done) {
     return gulp.src('src/assets/**/*')
@@ -29,6 +29,11 @@ function htmlPublish(done) {
       .pipe(htmlmin({ collapseWhitespace: true }))
       .pipe(gulp.dest('public'))
       .pipe(livereload());
+}
+
+function jsPublish(done) {
+    return gulp.src('src/assets/**/*.js')
+      .pipe(gulp.dest('public'));
 }
 
 // compile SCSS files
@@ -45,10 +50,11 @@ function scssCompile(done) {
       .pipe(gulp.dest('public/css'))
       .pipe(livereload());
 }
- 
+
 // watch files
 function watchFiles(done) {
     gulp.watch("src/assets/**/*.html", htmlPublish);
+    gulp.watch("src/assets/**/*.js", jsPublish);
     gulp.watch("src/scss/**/*.scss", scssCompile);
 }
 

@@ -77,4 +77,19 @@ class Deck {
       this.cards[j] = swap;
     }
   }
+
+  showCardsDealer() {
+    let cardOnTable = this.cards.pop();
+    let cardsDealer = document.querySelector("#dealer-hand .cards");
+    cardOnTable.mount(cardsDealer);
+    return cardOnTable;
+  }
+
+  showCardsPlayer() {
+    let cardOnTable = this.cards.pop();
+    let cardsPlayer = document.querySelector("#player-hand .cards");
+    cardOnTable.mount(cardsPlayer);
+    return cardOnTable;
+  }
+
 }

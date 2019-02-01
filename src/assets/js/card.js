@@ -6,4 +6,19 @@ class Card {
     this.rank = rank;
     this.suit = suit;
   }
-} 
+
+  render () {
+    this.element = document.createElement("div");
+    this.element.className = `card face-${this.rank}-of-${this.suit}`;
+  //  this.element = document.createElement("div");
+  //  this.element.className = `card face-revers`;
+  //  this.element = document.createElement("div");
+  //  this.element.className = `card face-${this.rank}-of-${this.suit}`;
+  
+  return this.element;
+  }
+
+  mount (parent) {
+    parent.appendChild(this.render());
+  }
+}
